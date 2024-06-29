@@ -1,0 +1,13 @@
+{% extends 'reddit_app/base.html' %} {% block content %}
+<h1>Posts in {{ subreddit.name }}</h1>
+<ul class="list-group">
+  {% for post in posts %}
+  <li class="list-group-item">
+    <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+<a href="{% url 'post_create' subreddit.id %}" class="btn btn-success mt-3"
+  >Create Post</a
+>
+{% endblock %}

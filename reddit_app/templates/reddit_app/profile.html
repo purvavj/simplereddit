@@ -1,0 +1,15 @@
+{% extends 'reddit_app/base.html' %} {% block content %}
+<h1>User Profile</h1>
+<h2>Subscribed Subreddits</h2>
+<ul class="list-group">
+  {% for subscription in subscribed_subreddits %}
+  <li class="list-group-item">{{ subscription.subreddit.name }}</li>
+  {% endfor %}
+</ul>
+<h2>Upvoted Posts</h2>
+<ul class="list-group">
+  {% for upvote in upvotes %}
+  <li class="list-group-item">{{ upvote.post.title }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
